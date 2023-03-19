@@ -11,15 +11,27 @@
   
   <script>
     function iniciais(nomeCompleto){
-      console.log(nomeCompleto)
-      var listaNome = nomeCompleto.split("")
-      
+      const listaNome = nomeCompleto.split(" ")
+      let acronimo = ''
+
+      listaNome.forEach((parteDoNome) => {
+        if (
+          listaNome.indexOf(parteDoNome) === 0 ||
+          listaNome.indexOf(parteDoNome) === listaNome.length - 1
+        ) {
+          acronimo += parteDoNome.split("")[0]
+        }
+      })
+
+      if (acronimo.length === 1) {
+        acronimo += 'X'
+      }
+
+      return acronimo
     }
-    
 
-    var nome = prompt("Digite seu nome completo")
-
-    iniciais(nome)
+    const nome = prompt("Digite seu nome completo: ")
+    console.log(iniciais(nome))
   </script>
   
 </body>
