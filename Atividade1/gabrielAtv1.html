@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viridian</title>
+
+</head>
+
+<body>
+  <h1 id="receive">Olá</h1>
+  <script>
+
+    var docName = document.getElementById("receive")
+    var name = prompt("Digite seu nome completo")
+    var array = name.split(" ");
+    var receiveName = [];
+    var firstLetter = ''
+    var lastLetter = ''
+    // percorre o nome
+    array.map((item, i) => {
+      if (array[i] != '') {
+        receiveName.push(array[i]) // recebe apenas array sem espaço
+      }
+    })
+    firstLetter = receiveName[0].charAt(0) //Primeiro nome
+    for (let i = 0; i <= receiveName.length; i++) { //Percorre o tamanho do array
+      if (receiveName.length == i) {
+        lastLetter = receiveName[i - 1].charAt(0) //Ultimo nome
+      }
+    }
+    if (receiveName.length == 1) { //Caso seja digitado apenas o primeiro nome
+      firstLetter = receiveName[0].charAt(0)
+      lastLetter = 'X'
+    }
+    docName.innerHTML = firstLetter + lastLetter //recebe no html
+    console.log(firstLetter + lastLetter);
+
+
+  </script>
+
+</body>
+
+</html>
