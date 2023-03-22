@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viridian</title>
+</head>
+<body>
+    <script>
+        function iniciais(nomeCompleto){
+            var listaNome = nomeCompleto.split("")
+        }
+    function iniciaisNomeCompleto(nomeCompleto) {
+      var partesNome = nomeCompleto.split(' ')
+
+      if (partesNome.length === 1) {
+        return partesNome[0].charAt(0).toUpperCase() + 'X'
+      }
+
+      var primeiroNome = partesNome[0].charAt(0).toUpperCase()
+      var ultimoNome = partesNome[partesNome.length - 1].charAt(0).toUpperCase()
+      var abrev = primeiroNome + ultimoNome
+
+      return abrev;
+    }
+
+
+    var nome = prompt("Digite seu nome completo")
+    console.log(iniciaisNomeCompleto(nome))
+
+    iniciais(nome)
+    </script>
+
+
+
+
+</body>
+</html>
