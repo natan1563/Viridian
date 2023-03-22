@@ -10,16 +10,23 @@
 <body>
   
   <script>
-    function iniciais(nomeCompleto){
-      console.log(nomeCompleto)
-      var listaNome = nomeCompleto.split("")
-      
+    function iniciaisNomeCompleto(nomeCompleto) {
+      var partesNome = nomeCompleto.split(' ');
+
+      if (partesNome.length === 1) {
+        return partesNome[0].charAt(0).toUpperCase() + 'X';
+      }
+
+      var primeiraInicial = partesNome[0].charAt(0).toUpperCase();
+      var ultimaInicial = partesNome[partesNome.length - 1].charAt(0).toUpperCase();
+      var abreviacao = primeiraInicial + ultimaInicial
+
+      return abreviacao;
     }
-    
 
     var nome = prompt("Digite seu nome completo")
+    console.log(iniciaisNomeCompleto(nome))
 
-    iniciais(nome)
   </script>
   
 </body>
