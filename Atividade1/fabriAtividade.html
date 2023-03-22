@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    
+    <script>
+        function fullName(fullName) {
+            var listName = fullName.split(" ");
+            var initials ='';
+
+            for (var i = 0 ; i < listName.length; i++) {
+                if ( i === 0 || i === listName.length -1) {
+                    initials+=listName[i][0]
+                    
+                }
+            }
+
+            if (listName.length < 2) {
+                initials += "x"
+                
+            }
+            console.log(initials.toUpperCase());  
+        }
+
+        var name = prompt("Digite seu nome completo"); 
+        fullName(name);
+
+    </script>
+
+</body>
+</html>
