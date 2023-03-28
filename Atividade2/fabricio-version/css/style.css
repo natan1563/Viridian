@@ -1,0 +1,109 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.header button{
+    position: absolute;
+    right: 20%;
+    margin-top: -45px;
+
+}
+
+.header i {
+    font-size: 22px;
+}
+
+.lista {
+    width: 60%;
+    margin-top: 40px;
+}
+
+.textInserir{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    width: 90%;
+}
+.divInserir{
+    padding: 10px;
+    background-color: rgb(143, 99, 99);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 6px 5px 10px 0px rgb(170, 156, 156);
+}
+
+button{
+
+    border-radius: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    color: aliceblue;
+    background-color: blueviolet;
+
+}
+
+@media(max-width: 775px){
+    input{
+        width: 70%;
+    }
+    button{
+        width: 30%;
+    }
+
+    i{
+        font-size: 30px;
+        padding: 0;
+    }
+
+    p{
+        font-size: x-large;
+    }
+}
+
+li{
+    list-style-type: none;
+   
+  
+}
+
+ul{
+    display:contents;
+}
+
+
+div .divLi span{
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(168, 105, 105);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 6px 5px 10px 0px grey;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+img {
+
+    margin-top: 10%;
+}
+
+
+
+
