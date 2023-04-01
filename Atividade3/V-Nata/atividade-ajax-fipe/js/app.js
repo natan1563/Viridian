@@ -1,7 +1,7 @@
 let apiUrl         = "https://parallelum.com.br/fipe/api/v1/{VEHICLE}"
 let endpointMarcas = endpointModels = endpointAnos = endpointValoresModal = ''
 
-const listaDeVeilos  = document.getElementById('vehicles_types')
+const listaDeVeiculos  = document.getElementById('vehicles_types')
 const listaDeMarcas  = document.getElementById("vehicles_brand")
 const listaDeModelos = document.getElementById("vehicles_model")
 const listaDeAnos    = document.getElementById("vehicles_year")
@@ -12,7 +12,7 @@ const botaoFechar    = modalPreco.querySelector('.close')
 
 const defaultOption  = '<option disabled selected></option>'
 
-listaDeVeilos.addEventListener("click", (event) => {
+listaDeVeiculos.addEventListener("click", (event) => {
   const tiposPermitidos = ['carros', 'motos', 'caminhoes']
   const tipoVeiculoAtual = event.target.dataset.type || event.target.parentElement.dataset.type
 
@@ -26,7 +26,10 @@ listaDeVeilos.addEventListener("click", (event) => {
 listaDeMarcas.addEventListener("change", (event) => {
   const opcaoAtual = event.target.value
   if (!opcaoAtual) return 
-
+  
+  reiniciarCampoEspecifico('modelo')
+  reiniciarCampoEspecifico('ano')
+  
   realizarRequisicao(endpointModels.replace("{MARCA_ID}", opcaoAtual))
   .then(response => {
     if (!'modelos' in response) throw new Error('Request falhou')
@@ -45,6 +48,7 @@ listaDeMarcas.addEventListener("change", (event) => {
 listaDeModelos.addEventListener("change", (event) => {
   const modelId = event.target.value
   if (!modelId) return 
+  reiniciarCampoEspecifico('ano')
 
   const marcaId = listaDeMarcas.options[listaDeMarcas.selectedIndex].value
   let endpoint = endpointAnos.replace("{MARCA_ID}", marcaId)
@@ -106,7 +110,6 @@ function realizarRequisicao(endpoint) {
 function buscarPorTipoVeiculo() {
   realizarRequisicao(endpointMarcas)
   .then(response => {
-    listaDeMarcas.innerHTML = defaultOption
     response.forEach(marca => {
       const novoItem = document.createElement("option")
       novoItem.value = marca.codigo
@@ -151,6 +154,23 @@ function reiniciarTodosOsCampos() {
   listaDeMarcas.innerHTML = defaultOption
   listaDeModelos.innerHTML = defaultOption
   listaDeAnos.innerHTML = defaultOption
+}
+
+function reiniciarCampoEspecifico(campo = 'marca') {
+  switch(campo) {
+    case 'marca':
+      listaDeMarcas.setAttribute('disabled', true)
+      listaDeMarcas.innerHTML = defaultOption
+      break;
+    
+    case 'modelo':
+      listaDeModelos.setAttribute('disabled', true)
+      listaDeModelos.innerHTML = defaultOption
+
+    case 'ano':
+      listaDeAnos.setAttribute('disabled', true)
+      listaDeAnos.innerHTML = defaultOption
+  }
 }
 
 function visibilidadeDoBotao() {
