@@ -1,0 +1,73 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide_modal {
+    display: none;
+}
+
+.modal .body {
+    background-color: white;
+    width: 542px;
+    height: 358px;
+    border-radius: 16px;
+    padding: 30px;
+    color: #707070;
+}
+
+.modal .body .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.modal .body .row .close {
+    cursor: pointer;
+}
+
+.modal .body .row img {
+    margin-top: 5px;
+    width: 21px;
+}
+
+.modal .body .vehicle_name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #E60004;
+}
+
+.modal .body .vehicle_data {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modal .body .vehicle_data > * {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.modal .body .vehicle_data strong {
+    font-size: 18px;
+}
+
+.modal .body hr {
+    border: none;
+    border-bottom: 3px solid #E5E5E5;
+    margin: 20px 0 35px 0;
+}
+
+.modal .body .price {
+    font-size: 30px;
+    color: #E60004;
+    font-weight: bold;
+}

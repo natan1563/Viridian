@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F2F2;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.container {
+    width: 700px;
+    background-color: white;
+    margin: 80px auto;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+}
+
+.container .content {
+    padding: 60px 75px;
+}
+
+.container .content .logo {
+    width: 193px;
+    margin-bottom: 35px;
+}
+
+.container .content h1 {
+    font-size: 32px;
+    color: #E60004;
+}
+
+.container .content p {
+    font-size: 20px;
+}
+
+.container .content hr {
+    border: none;
+    border-bottom: 3px solid #F2F2F2;
+    margin: 35px 0;
+}
+
+.container .content h2 {
+    font-size: 22px;
+    color: #E60004;
+    margin-bottom: 20px;
+}
+
+.container .content ul#vehicles_types {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.container .content ul#vehicles_types li {
+    width: 157px;
+    height: 157px;
+    background-color: #F2F2F2;
+    border: 3px solid #E5E5E5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .content ul#vehicles_types li.active {
+    border-color: #E6000455;
+}
+
+.container .content ul#vehicles_types li img {
+    width: 90px;
+    opacity: 0.2;
+}
+
+.container .content ul#vehicles_types li.active img {
+    opacity: 1;
+}
+
+.container .content select {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 3px solid #E5E5E5;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.search_button {
+    width: 202px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 30px;
+    transition: 0.4s;
+    cursor: default;
+    opacity: 0.2;
+}
+
+.search_button_show {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.search_button .icon {
+    background-color: #B80003;
+    width: 55px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px 0 0 25px;
+}
+
+.search_button .label {
+    background-color: #E60004;
+    width: 147px;
+    height: 46px;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+
+.search_button .icon img {
+    width: 17px;
+}
+
+.footer {
+    padding: 60px 75px;
+    background-color: #E60004;
+    color: white;
+    font-size: 20px;
+}
+
+.footer strong {
+    font-size: 24px;
+}
