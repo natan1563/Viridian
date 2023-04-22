@@ -1,0 +1,5 @@
+primeiro ao clicar no campo ele deve limpar o texfield
+
+segundo, esta registrando tarefas em branco
+
+terceiro, não permitir a repetição de dados já cadastrado
